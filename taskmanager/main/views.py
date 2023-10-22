@@ -1,6 +1,8 @@
-from django.shortcuts import render
-from .models import Task
+# from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+
 from .forms import TaskForm
+from .models import Task
 
 
 def index(request):
@@ -11,9 +13,20 @@ def index(request):
 def about(request):
     return render(request, 'main/about.html')
 
+# @login_required
 def creator(request):
+    error = ""
+    if request.method == "POST":
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("home")
+        else:
+            error = "Форма была неверной"
+
     form = TaskForm()
     context = {
-        'form' : form
+        'form' : form,
+        'error' : error
     }
     return render(request, 'main/creator.html', context)
