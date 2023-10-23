@@ -13,6 +13,7 @@ def index(request):
 def about(request):
     return render(request, 'main/about.html')
 
+
 # @login_required
 def creator(request):
     error = ""
@@ -30,3 +31,7 @@ def creator(request):
         'error' : error
     }
     return render(request, 'main/creator.html', context)
+
+
+def info(request):
+    return render(request, 'main/info.html')
