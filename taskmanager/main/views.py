@@ -35,3 +35,11 @@ def creator(request):
 
 def info(request):
     return render(request, 'main/info.html')
+
+
+def sign_in(request):
+    return render(request, 'main/sign_in.html')
+
+
+def log_in(request):
+    return render(request, 'main/log_in.html')
