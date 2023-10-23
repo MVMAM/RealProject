@@ -50,7 +50,14 @@
         </ul>
     </div>
     <main class="form-signin w-100 m-auto">
-        <form>
+        <form method="post">
+
+            {% csrf_token %}
+
+            {% if form.errors %}
+                {% bootstrap_form_errors form %}
+            {% endif %}
+
             <img class="mb-4" src="static/images/MMM.jpg" width="72" height="57">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
             <div class="form-floating">
@@ -67,7 +74,13 @@
                     Remember me
                 </label>
             </div>
-            <button class="btn btn-danger w-100 py-2" type="submit">Log in</button>
+            <button class="btn btn-danger w-100 py-2" type="submit">
+                {% if btn_text %}
+                    {{ btn_text }}
+                {% else %}
+                    Log in
+                {% endif %}
+            </button>
             <p class="mt-5 mb-3 text-body-secondary">{% now "Y-m-d" %}</p>
         </form>
     </main>

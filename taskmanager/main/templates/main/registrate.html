@@ -5,11 +5,9 @@
 {% endblock title %}
 
 {% block content %}
-    <div class="container">
-        <h1>Registration</h1>
+    <h1>Registration</h1>
 
-        {% include "main/form_snippets.html" with form=form btn_text='Register' %}
-    </div>
+    {% include "main/form_snippets.html" with form=form btn_text='Register' %}
 {% endblock content %}
 
 {% block style %}
