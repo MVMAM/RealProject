@@ -3,6 +3,7 @@
         <h1>Registration</h1>
 
         <form method="post">
+            {% csrf_token %}
             <hr>
             <div class="accounttype">
                 <input type="radio" value="None" id="radioOne" name="account" checked/>
@@ -168,15 +169,14 @@
             margin-top: 20px;
         }
         a.button {
-            font-size: 14px;
+            font-size: 25px;
             font-weight: 600;
             color: white;
-            padding: 6px 25px 0px 20px;
             margin: 10px 8px 20px 0px;
             display: inline-block;
             float: right;
             text-decoration: none;
-            width: 50px; height: 27px; 
+            width: 100px; height: 40px;
             -webkit-border-radius: 5px; 
             -moz-border-radius: 5px; 
             border-radius: 5px; 
@@ -184,12 +184,12 @@
             -webkit-box-shadow: 0 3px rgba(58,87,175,.75); 
             -moz-box-shadow: 0 3px rgba(58,87,175,.75); 
             box-shadow: 0 3px rgba(58,87,175,.75);
-            transition: all 0.1s linear 0s; 
-            top: 0px;
+            transition: all 1s linear 0s; 
+            top: -20px;
             position: relative;
         }
         a.button:hover {
-            top: 3px;
+            top: -10px;
             background-color:#2e458b;
             -webkit-box-shadow: none; 
             -moz-box-shadow: none; 

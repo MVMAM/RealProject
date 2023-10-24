@@ -1,4 +1,4 @@
-# from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
@@ -15,7 +15,7 @@ def about(request):
     return render(request, 'main/about.html')
 
 
-# @login_required
+@login_required
 def creator(request):
     error = ""
     if request.method == "POST":
