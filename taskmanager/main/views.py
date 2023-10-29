@@ -15,7 +15,6 @@ def about(request):
     return render(request, 'main/about.html')
 
 
-@login_required
 def creator(request):
     error = ""
     if request.method == "POST":
